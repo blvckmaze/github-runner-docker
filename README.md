@@ -18,18 +18,18 @@ In this example, dind is used because my workflows consist of running dockerized
 
 - Copy **[.env.example][env-example]** contents and create new `.env` file with it.
 - Update environment variables in newly created `.env` file, get runner token by visiting `"Settings > Actions > Runners > New self-hosted runner"` in your repository and copying it from `Configure` block
-- Build and start container by running the following command inside project's root folder: `docker-compose up -d` 
-- In the future if you'll need to update token/repository you'll need to rebuild container by running: `docker-compose up -d --build` 
+- Build and start container by running the following command inside project's root folder: `docker-compose up -d`
+- In the future if you'll need to update token/repository you'll need to rebuild container by running: `docker-compose up -d --build`
 
 ## Configuration
 
 ### Environment variables
 
-| Variable name          | Description                                                                                                                                             | Default value                                     |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| ACTIONS_RUNNER_TOKEN   | This is an authentication token used by the Github Actions runner to communicate with the Github API and access resources in your repository.           | AQJIKZAAABBBCCCDDDEEECHANGEME                     |
-| ACTIONS_RUNNER_VERSION | This variable specifies the version of the Github Actions runner that will be used.                                                                     | 2.303.0                                           |
-| REPO_URL               | This is the URL of the Github repository where the actions runner will be used. The runner will be able to access and run workflows in this repository. | https://github.com/blvckmaze/github-runner-docker |
+| Variable name  | Description                                                                                                                                             | Default value                                     |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| RUNNER_TOKEN   | This is an authentication token used by the Github Actions runner to communicate with the Github API and access resources in your repository.           | AQJIKZAAABBBCCCDDDEEECHANGEME                     |
+| RUNNER_VERSION | This variable specifies the version of the Github Actions runner that will be used.                                                                     | 2.303.0                                           |
+| REPOSITORY_URL | This is the URL of the Github repository where the actions runner will be used. The runner will be able to access and run workflows in this repository. | https://github.com/blvckmaze/github-runner-docker |
 
 [docker-link]: https://docs.docker.com/engine/install/
 [docker-compose-link]: https://docs.docker.com/compose/install/
