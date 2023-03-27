@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  actions-runner:
+    build:
+      context: $PWD/docker/github-runner
+      dockerfile: Dockerfile
+      args:
+        RUNNER_TOKEN: $RUNNER_TOKEN
+        RUNNER_VERSION: $RUNNER_VERSION
+        REPOSITORY_URL: $REPOSITORY_URL
+    hostname: actions-runner
+    container_name: actions-runner
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
